@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>VEDIC BIOTECH | A RESET</title>
+
+<style>
+
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    background: #05070c;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    overflow-x: hidden;
+}
+
+/* BACKGROUND */
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background:
+    radial-gradient(circle at 20% 20%, #153b5c55, transparent 40%),
+    radial-gradient(circle at 80% 80%, #d5a12a22, transparent 40%);
+    z-index: -2;
+}
+
+.grid {
+    position: fixed;
+    inset: 0;
+    background-image:
+    linear-gradient(#ffffff08 1px, transparent 1px),
+    linear-gradient(90deg,#ffffff08 1px,transparent 1px);
+    background-size: 45px 45px;
+    z-index: -1;
+}
+
+/* HEADER */
+
+header {
+    text-align: center;
+    padding: 35px 15px 15px;
+}
+
+.tag {
+    display: inline-block;
+    border: 1px solid #d8b65c;
+    color: #e9ca75;
+    padding: 8px 20px;
+    border-radius: 30px;
+    font-size: 11px;
+    letter-spacing: 4px;
+}
+
+h1 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: clamp(27px, 6vw, 48px);
+    margin-top: 25px;
+    background: linear-gradient(90deg,#ffffff,#e9c56b,#ffffff);
+    -webkit-background-clip: text;
+    color: transparent;
+    letter-spacing: 3px;
+}
+
+.subtitle {
+    color: #aab6c8;
+    margin-top: 12px;
+    font-size: 14px;
+}
+
+/* MAIN CARD */
+
+.container {
+    width: 92%;
+    max-width: 650px;
+    margin: 35px auto;
+    padding: 30px;
+    background: rgba(15,22,35,0.88);
+    border: 1px solid #d8b65c66;
+    border-radius: 22px;
+    box-shadow:
+    0 0 35px #00bfff16,
+    0 0 50px #d8b65c15;
+    backdrop-filter: blur(15px);
+}
+
+.section-title {
+    font-family: 'Orbitron', sans-serif;
+    color: #e9ca75;
+    font-size: 15px;
+    margin-bottom: 12px;
+    letter-spacing: 1px;
+}
+
+.description {
+    color: #9eacc0;
+    font-size: 13px;
+    margin-bottom: 20px;
+}
+
+/* INPUTS */
+
+input[type="text"], textarea {
+    width: 100%;
+    background: #080e19;
+    border: 1px solid #33445b;
+    border-radius: 10px;
+    padding: 15px;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    margin-bottom: 20px;
+    outline: none;
+    transition: 0.3s;
+}
+
+input:focus, textarea:focus {
+    border-color: #d8b65c;
+    box-shadow: 0 0 12px #d8b65c44;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 110px;
+}
+
+/* RATINGS */
+
+.rating-group {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin: 22px 0;
+}
+
+.rating-group input {
+    display: none;
+}
+
+.rating-group label {
+    font-size: 36px;
+    cursor: pointer;
+    color: #435065;
+    transition: 0.25s;
+}
+
+.rating-group label:hover {
+    transform: scale(1.25);
+}
+
+.rating-group input:checked + label {
+    color: #ffd45c;
+    text-shadow: 0 0 18px #ffcf43;
+}
+
+.rating-group label:has(~ input:checked) {
+    color: #ffd45c;
+}
+
+/* HEARTS */
+
+.heart-group label {
+    font-size: 34px;
+    color: #435065;
+}
+
+.heart-group input:checked + label {
+    color: #ff416c;
+    text-shadow: 0 0 18px #ff416c;
+}
+
+.heart-group label:has(~ input:checked) {
+    color: #ff416c;
+}
+
+/* BUTTON */
+
+.submit-btn {
+    width: 100%;
+    padding: 17px;
+    background: linear-gradient(100deg,#b68b2e,#f2d17a);
+    border: none;
+    border-radius: 12px;
+    color: #10131a;
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 800;
+    font-size: 14px;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-top: 15px;
+}
+
+.submit-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0 25px #e9ca7588;
+}
+
+/* FOOTER */
+
+footer {
+    text-align: center;
+    padding: 25px 10px;
+    color: #78879d;
+    font-size: 11px;
+    letter-spacing: 2px;
+}
+
+/* SUCCESS */
+
+.success {
+    display: none;
+    text-align: center;
+    padding: 25px 5px;
+}
+
+.success h2 {
+    color: #e9ca75;
+    font-family: 'Orbitron', sans-serif;
+    margin: 20px 0;
+}
+
+.success .icon {
+    font-size: 65px;
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    50% { transform: scale(1.15); }
+}
+
+.small {
+    color: #9eacc0;
+    font-size: 12px;
+}
+
+.optional {
+    color: #8290a5;
+    font-size: 11px;
+}
+
+@media(max-width:480px) {
+    .container {
+        padding: 23px 17px;
+    }
+
+    .rating-group {
+        gap: 8px;
+    }
+
+    .rating-group label {
+        font-size: 31px;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="grid"></div>
+
+<header>
+
+    <div class="tag">EXPERIENCE • INNOVATION • TRADITION</div>
+
+    <h1>VEDIC BIOTECH</h1>
+
+    <p class="subtitle">A RESET — Where Ancient Wisdom Meets Modern Innovation</p>
+
+</header>
+
+<div class="container">
+
+    <form id="reviewForm"
+    action="https://formsubmit.co/svdiitcomp3@gmail.com"
+    method="POST">
+
+        <!-- FORMSUBMIT SETTINGS -->
+
+        <input type="hidden" name="_subject"
+        value="New VEDIC BIOTECH Expo Visitor Review">
+
+        <input type="hidden" name="_template"
+        value="table">
+
+        <input type="hidden" name="_captcha"
+        value="false">
+
+        <input type="hidden" name="_honey">
+
+        <input type="hidden" name="Submission Date"
+        id="submissionDate">
+
+        <h2 class="section-title">01 / VISITOR DETAILS</h2>
+
+        <p class="description">
+            Tell us a little about yourself.
+        </p>
+
+        <input type="text"
+        name="Visitor Name"
+        placeholder="Your Name (Optional)">
+
+        <hr style="border:1px solid #263348;margin:15px 0 25px;">
+
+        <h2 class="section-title">02 / OVERALL EXPERIENCE</h2>
+
+        <p class="description">
+            How would you rate your experience at our exhibition?
+        </p>
+
+        <div class="rating-group">
+
+            <input type="radio" id="s1" name="Overall Rating" value="1 Star" required>
+            <label for="s1">★</label>
+
+            <input type="radio" id="s2" name="Overall Rating" value="2 Stars">
+            <label for="s2">★</label>
+
+            <input type="radio" id="s3" name="Overall Rating" value="3 Stars">
+            <label for="s3">★</label>
+
+            <input type="radio" id="s4" name="Overall Rating" value="4 Stars">
+            <label for="s4">★</label>
+
+            <input type="radio" id="s5" name="Overall Rating" value="5 Stars">
+            <label for="s5">★</label>
+
+        </div>
+
+        <p class="small" style="text-align:center">
+            1 = Needs Improvement | 5 = Outstanding
+        </p>
+
+        <hr style="border:1px solid #263348;margin:25px 0;">
+
+        <h2 class="section-title">03 / HOW MUCH DID YOU LOVE IT?</h2>
+
+        <p class="description">
+            Show us how much you enjoyed VEDIC BIOTECH!
+        </p>
+
+        <div class="rating-group heart-group">
+
+            <input type="radio" id="h1" name="Love Rating" value="1 Heart" required>
+            <label for="h1">♥</label>
+
+            <input type="radio" id="h2" name="Love Rating" value="2 Hearts">
+            <label for="h2">♥</label>
+
+            <input type="radio" id="h3" name="Love Rating" value="3 Hearts">
+            <label for="h3">♥</label>
+
+            <input type="radio" id="h4" name="Love Rating" value="4 Hearts">
+            <label for="h4">♥</label>
+
+            <input type="radio" id="h5" name="Love Rating" value="5 Hearts">
+            <label for="h5">♥</label>
+
+        </div>
+
+        <hr style="border:1px solid #263348;margin:25px 0;">
+
+        <h2 class="section-title">04 / SUGGESTIONS & CORRECTIONS</h2>
+
+        <p class="description">
+            What can we improve? Your suggestions help us grow.
+            <span class="optional">(Optional)</span>
+        </p>
+
+        <textarea
+        name="Suggestions and Corrections"
+        placeholder="Share your suggestions, corrections or ideas..."></textarea>
+
+        <h2 class="section-title">05 / ADDITIONAL COMMENTS</h2>
+
+        <p class="description">
+            Anything else you would like to tell us?
+            <span class="optional">(Optional)</span>
+        </p>
+
+        <textarea
+        name="Additional Comments"
+        placeholder="Write your experience here..."></textarea>
+
+        <button type="submit" class="submit-btn">
+            SUBMIT MY REVIEW →
+        </button>
+
+        <p class="small" style="text-align:center;margin-top:17px;">
+            Your feedback helps us create a better tomorrow.
+        </p>
+
+    </form>
+
+    <div class="success" id="success">
+
+        <div class="icon">✦</div>
+
+        <h2>THANK YOU!</h2>
+
+        <p>
+            Your review has been submitted successfully.
+        </p>
+
+        <br>
+
+        <p class="small">
+            Thank you for being a part of VEDIC BIOTECH — A RESET.
+        </p>
+
+    </div>
+
+</div>
+
+<footer>
+
+    VEDIC BIOTECH — A RESET<br><br>
+    POWERED BY INNOVATION • INSPIRED BY TRADITION
+
+</footer>
+
+<script>
+
+document.getElementById("submissionDate").value =
+new Date().toLocaleString();
+
+</script>
+
+</body>
+</html>
